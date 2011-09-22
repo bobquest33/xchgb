@@ -1,0 +1,3 @@
+[submodule "bitcoin-python"]
+	path = bitcoin-python
+	url = https://github.com/laanwj/bitcoin-python

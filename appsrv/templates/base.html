@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>xchgb &middot; {% block title %}Exchange BTC for GBP{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/frontend.css">
+</head>
+<body>
+    <div id="header">
+        <div class="left">
+            <a href="{% url frontend.views.welcome %}">
+                <h1>xchgb</h1>
+                <h2>UK Bitcoin Exchange</h2>
+            </a>
+        </div>
+        <div class="right">
+            <div class="curtime">Wed 4 Jun 2011, 11:55 GMT</div>
+            <div class="auth">
+                {% if not user.is_anonymous %}
+                    <p class="email">{{ user }}</p>
+                    &middot;
+                    <a href="{% url logout %}">Logout</a>
+                {% else %}
+                    Not logged in
+                    &middot;
+                    <a href="{% url frontend.views.login %}">Login now</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div id="ticker">
+        <p class="recent">Last: 10.49 &nbsp;&middot;&nbsp; Bid: 10.40 &nbsp;&middot;&nbsp; Ask: 10.89 &nbsp;&middot;&nbsp; Vol: 80.03</p>
+        <p class="average">24h: 40.49 &nbsp;&middot;&nbsp; 7d: 40.22 &nbsp;&middot;&nbsp; 30d: 20.49</p>
+    </div>
+    <div id="side">
+        <ul id="navigation">
+            <li><a href="{% url frontend.views.welcome %}" class="first">How it Works</a></li>
+            <li><a href="{% url frontend.views.dashboard %}">Dashboard</a></li>
+            <li><a href="{% url frontend.views.market_data %}">Market Data</a></li>
+            <li><a href="{% url frontend.views.buy_order %}">Place Buy Order</a></li>
+            <li><a href="{% url frontend.views.sell_order %}">Place Sell Order</a></li>
+            <li><a href="{% url frontend.views.deposit_funds %}">Deposit Funds</a></li>
+            <li><a href="{% url frontend.views.withdraw_funds %}">Withdraw Funds</a></li>
+            <li><a href="{% url frontend.views.account_history %}">Account History</a></li>
+            <li><a href="{% url frontend.views.help %}" class="last">Get Help</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <ul id="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% block content %}{% endblock %}
+    </div>
+    <div id="footer">
+        <div class="links">
+            <a href="{% url frontend.views.network_status %}">Network Status</a>
+            <a href="{% url frontend.views.api_help %}">Trading API</a>
+            <a href="{% url frontend.views.about_bitcoin %}">About Bitcoin</a>
+            <a href="{% url frontend.views.legal %}">Legal</a>
+            <a href="{% url frontend.views.contact %}">Contact</a>
+        </div>
+        <div class="copyright">
+            Copyright &copy; xchgb 2011
+        </div>
+    </div>
+</body>
+</html>

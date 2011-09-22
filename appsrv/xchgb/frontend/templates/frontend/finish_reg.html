@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Account Setup{% endblock %}
+
+{% block content %}
+    <h1>Account Setup</h1>
+    <p>Please read the following information carefully:</p>
+    <p>We need you to provide an <strong>email address</strong> and a <strong>trading password</strong>. We won't verify the email address you give us, but we do recommend that you use a valid one, so we can send you important service announcements. We never spam.</p>
+    <p class="important">You <strong>MUST</strong> remember your trading password. You will not be able to place orders or withdraw funds if you lose it, and we don't provide a password reset facility for security reasons.</p>
+    <form action="{% url frontend.views.finish_registration %}" method="post">
+        {% csrf_token %}
+        <table id="account-setup">
+            {{ form }}
+        </table>
+        <p>Please click the button below to complete the account setup process. By continuing, you confirm that you agree to be bound by our <a href="{% url frontend.views.legal %}">Terms of Use</a>.</p>
+        <input type="submit" value="Agree to Terms and Continue" class="big-button">
+    </form>
+{% endblock %}

@@ -1,0 +1,249 @@
+body {
+    font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+}
+
+a, a:visited {
+    color: #515e80;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p.important {
+    padding: 5px 7px;
+    border: 1px solid #db0000;
+    color: #db0000;
+    border-radius: 5px; -moz-border-radius: 5px;
+}
+
+#header {
+    overflow: auto;
+    margin: 0 auto;
+    padding-bottom: 4px;
+    width: 98%;
+    border-bottom: 2px solid black;
+}
+
+#header .left a {
+    float: left;
+    color: black;
+}
+
+#header .left h1 {
+    display: inline;
+    padding-right: 8px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#header .left h2 {
+    display: inline;
+    font-size: 18px;
+}
+
+#header .right {
+    float: right;
+    font-size: 14px;
+    text-align: right;
+}
+
+#header .right .curtime {
+    margin-bottom: 2px;
+}
+
+#header .right .email {
+    display: inline;
+}
+
+#ticker {
+    margin: 2px 11px 0 11px;
+    font-size: 11px;
+}
+
+#ticker p.recent {
+    margin: 0;
+    float: left;
+}
+
+#ticker p.average {
+    margin: 0;
+    float: right;
+}
+
+#side {
+    clear: both;
+    float: left;
+    margin: 22px 11px;
+}
+
+#navigation {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#navigation li a, #navigation li a:visited {
+    display: block;
+    margin: 0;
+    padding: 6px 10px;
+    border: 2px solid #ccc;
+    border-top: none;
+}
+
+#navigation li a.first {
+    border-top: 2px solid #ccc;
+    border-top-left-radius: 5px; -moz-border-radius-topleft: 5px;
+    border-top-right-radius: 5px; -moz-border-radius-topright: 5px;
+}
+
+#navigation li a.last {
+    border-bottom-left-radius: 5px; -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px; -moz-border-radius-bottomright: 5px;
+}
+
+#navigation li a:hover {
+    background: #ccc;
+    color: black;
+    text-decoration: none;
+}
+
+#pricebox {
+    float: right;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+#pricebox th, #pricebox td {
+    width: 50%;
+    padding: 1px;
+    border: 1px solid black;
+}
+
+#content {
+    padding: 20px 20px 0 190px;
+    font-size: 14px;
+}
+
+#content h1 {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+#content h2 {
+    margin: 22px 0 8px 0;
+    font-size: 16px;
+}
+
+#footer {
+    overflow: auto;
+    width: 100%;
+    padding-top: 30px;
+    font-size: 13px;
+}
+
+#footer .links {
+    float: left;
+    margin-left: 10px;
+}
+
+#footer .links a, #footer .links a:visited {
+    display: block;
+    float:left;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+#footer .copyright {
+    float: right;
+    margin-right: 10px;
+    color: #888;
+}
+
+ul#auth-providers {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul#auth-providers a {
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 3px 10px 3px 2px;
+    text-decoration: none;
+    border-radius: 5px; -moz-border-radius: 5px;
+}
+
+ul#auth-providers a:hover {
+    background: #eee;
+}
+
+ul#auth-providers img {
+    padding-right: 5px;
+    vertical-align: middle;
+}
+
+form#openid input[type='text'] {
+    width: 200px;
+}
+
+table#account-setup {
+    width: 100%;
+    padding-top: 10px;
+}
+
+table#account-setup th {
+    width: 130px;
+    padding: 3px 10px 0 0;
+    vertical-align: top;
+    text-align: right;
+    font-weight: normal;
+}
+
+table#account-setup th, table#account-setup td {
+    padding-bottom: 12px;
+}
+
+#account-setup input {
+    margin: 0;
+}
+
+#account-setup #id_email {
+    width: 200px;
+}
+
+#account-setup .helptext {
+    color: #777;
+    font-size: 11px;
+}
+
+input.big-button {
+    font-size: 16px;
+}
+
+ul.errorlist {
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+ul#messages {
+    margin: 10px;
+    padding: 0;
+}
+
+ul.errorlist li, ul#messages li {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+ul.errorlist li, ul#messages li.error {
+    display: inline-block;
+    margin: 0 0 2px 0;
+    padding: 4px 4px 5px 24px;
+    background: url(../images/warning.png) no-repeat red;
+    color: white;
+    font-size: .9em;
+    border-radius: 4px; -moz-border-radius: 4px;
+}

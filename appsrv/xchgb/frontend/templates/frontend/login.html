@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <h1>Login</h1>
+    <p>Please log in with one of our supported authentication services. You must choose <strong>the same one</strong> each time you log in.</p>
+    <ul id="auth-providers">
+        <li><a href="/login/facebook/"><img src="{{ MEDIA_URL }}images/facebook.png"> Log in with Facebook</a></li>
+        <li><a href="/login/google/"><img src="{{ MEDIA_URL }}images/google.png"> Log in with Google</a></li>
+        <li><a href="/login/twitter/"><img src="{{ MEDIA_URL }}images/twitter.png"> Log in with Twitter</a></li>
+    </ul>
+    <p>Alternatively, you can log in using OpenID:</p>
+    <form id="openid" action="/login/openid/" method="post">
+        {% csrf_token %}
+        <input type="text" name="openid_identifier" placeholder="Enter your OpenID address">
+        <input type="submit" value="Log in with OpenID">
+    </form>
+{% endblock %}
